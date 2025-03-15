@@ -4,134 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iron Valley Real Estate Prestige</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <!-- Styles and Scripts -->
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <script defer src="security.js"></script>
-    <script defer src="heatmap.js"></script>
-    <script defer src="ab-testing.js"></script>
-    <script defer src="ai-content.js"></script>
-    <script defer src="ai-chatbot.js"></script>
-    <script defer src="ai-matching.js"></script>
-    <script defer src="ai-video-tour.js"></script>
-    <script defer src="blockchain-security.js"></script>
-    <script defer src="progressive-web-app.js"></script>
-    <script defer src="ai-property-description.js"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Northwell:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="manifest" href="manifest.json">
-    
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'nonce-random123'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
-    
-    <style>
-        :root {
-            --ivre-black: #141516;
-            --ivre-white: #ffffff;
-            --ivre-rust: #a9683f;
-            --ivre-gray: #9c9ea5;
-            --dark-bg: #1a1a1a;
-            --dark-text: #e0e0e0;
-        }
-        body {
-            font-family: 'Northwell', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--primary-color);
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .dark-mode {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
-        }
-        header {
-            background-color: var(--ivre-black);
-            color: var(--ivre-white);
-            padding: 15px 0;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background-color 0.3s;
-            animation: fadeIn 1s ease-in-out;
-        }
-        .sticky {
-            background-color: var(--ivre-gray);
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        .advanced-features {
-            text-align: center;
-            padding: 50px;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .chatbot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--ivre-black);
-            color: var(--ivre-white);
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: 0;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="script.js" defer></script>
 </head>
-<body onload="autoDarkMode()">
-    <header>
-        <div class="container">
-            <img src="logo.png" alt="Iron Valley Real Estate Prestige Logo" width="150">
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="logo.png" alt="Iron Valley Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#listings">Listings</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Background Video -->
+    <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="hero-bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <img src="logo.png" alt="Iron Valley Real Estate Prestige" class="hero-logo">
             <h1>Iron Valley Real Estate Prestige</h1>
+            <button onclick="window.location.href='#listings'">View Listings</button>
+            <button onclick="window.location.href='#contact'">Contact Us</button>
         </div>
     </header>
-    
-    <section class="advanced-features">
-        <div class="container">
-            <h2>AI-Powered Features</h2>
-            <button onclick="startAIChatbot()">AI Chatbot</button>
-            <button onclick="matchProperties()">AI Property Matching</button>
-            <button onclick="generateAITour()">AI Video Walkthroughs</button>
-            <button onclick="initiateBlockchainTransaction()">Blockchain Property Security</button>
-            <button onclick="activateVoiceSearch()">Voice Search Navigation</button>
-            <button onclick="showSocialProof()">Real-Time Social Proof</button>
-            <button onclick="runABTesting()">A/B Testing</button>
-            <button onclick="launchAICampaign()">AI Ad Campaigns</button>
-            <button onclick="enableHeatmaps()">Heatmap Tracking</button>
-            <button onclick="runPWA()">Install as App (PWA)</button>
-            <button onclick="generatePropertyDescription()">AI Property Descriptions</button>
-        </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>We provide luxury real estate services with cutting-edge technology, AI-powered insights, and unmatched customer service.</p>
     </section>
-    
-    <script>
-        function autoDarkMode() {
-            let hour = new Date().getHours();
-            if (hour >= 19 || hour < 7) {
-                document.body.classList.add("dark-mode");
-            }
-        }
-        function generatePropertyDescription() {
-            alert("AI is generating property descriptions...");
-        }
-    </script>
+
+    <!-- Listings Section -->
+    <section id="listings" class="section">
+        <h2>Featured Listings</h2>
+        <p>Explore our premium real estate listings across the region.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Iron Valley Real Estate Prestige. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
