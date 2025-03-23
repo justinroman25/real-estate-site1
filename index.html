@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justin Roman | Iron Valley Real Estate Prestige</title>
-    <meta name="description" content="Justin Roman at Iron Valley Real Estate Prestige offers expert real estate services for buyers and sellers in Virginia.">
+    <meta name="description" content="Justin Roman at Iron Valley Real Estate Prestige offers expert real estate services in Virginia. Find Your Thing with us.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/akzidenz-grotesk-bq">
+    <link rel="stylesheet" href="path/to/northwell.css"> <!-- Replace with Northwell source -->
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -14,13 +17,14 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <a href="#home"><img src="assets/logo.png" alt="Iron Valley Real Estate Prestige Logo"></a>
+                <a href="#home"><img src="assets/ivre-logo.png" alt="Iron Valley Real Estate Prestige Logo"></a>
             </div>
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#listings">Properties</a></li>
-                    <li><a href="#about">About Justin</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#why">Why Work With Us</a></li>
                     <li><a href="#videos">Videos</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -28,41 +32,45 @@
         </div>
     </header>
 
-    <!-- Hero Section (Slider Placeholder) -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-slider">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="assets/hero-bg.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-content">
-                <h1>Welcome Home with Justin Roman</h1>
-                <p>Iron Valley Real Estate Prestige</p>
-                <a href="#listings" class="hero-btn">Search Properties</a>
-            </div>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/hero-bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1><span class="northwell">Find Your Thing</span></h1>
+            <p>Justin Roman | Iron Valley Real Estate Prestige</p>
+            <a href="#listings" class="hero-btn">Search Properties</a>
         </div>
     </section>
 
-    <!-- Quick Search (Placeholder for Showcase IDX) -->
+    <!-- Listings -->
     <section id="listings" class="quick-search">
-        <h2>Find Your Perfect Property</h2>
+        <h2>Properties</h2>
         <div id="idx-listings" class="listings-container">
-            <p>Loading Showcase IDX listings...</p> <!-- Replace with [showcaseidx] in WordPress -->
+            <p>Loading Showcase IDX listings...</p>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="about">
-        <h2>About Justin Roman</h2>
+        <h2><span class="northwell">Meet Justin</span> Roman</h2>
         <div class="about-inner">
-            <img src="assets/justin-roman-headshot.jpg" alt="Justin Roman" class="headshot">
-            <p>Hi, I’m Justin Roman, your dedicated real estate expert at Iron Valley Real Estate Prestige. With a passion for helping clients find their dream homes, I bring personalized service, market expertise, and cutting-edge technology to every transaction. Whether you’re buying or selling, I’m here to guide you every step of the way.</p>
+            <img data-src="assets/justin-roman-headshot.jpg" alt="Justin Roman" class="headshot lazyload">
+            <p>Hi, I’m Justin Roman, your dedicated real estate expert at Iron Valley Real Estate Prestige. With years of experience in the Virginia market, I’m passionate about helping clients find their perfect home or sell their property with ease. Let’s make your real estate journey seamless and successful.</p>
         </div>
+    </section>
+
+    <!-- Why Work With Us -->
+    <section id="why" class="why">
+        <h2>Why Work With Us</h2>
+        <p>Personalized service, deep market knowledge, and a commitment to your goals set me apart. I use cutting-edge tools and a client-first approach to ensure you find your thing—whether it’s a dream home or a smart investment.</p>
     </section>
 
     <!-- Testimonials -->
     <section class="testimonials">
-        <h2>What Clients Say</h2>
+        <h2>Testimonials</h2>
         <div class="testimonials-slider">
             <div class="testimonial">
                 <p>"Justin made buying my first home a breeze. His expertise and dedication were unmatched!"</p>
@@ -75,16 +83,16 @@
         </div>
     </section>
 
-    <!-- YouTube Section -->
+    <!-- Videos -->
     <section id="videos" class="videos">
-        <h2>My Latest Videos</h2>
+        <h2>Videos</h2>
         <div class="youtube-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
         </div>
         <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" class="youtube-link">Subscribe on YouTube</a>
     </section>
 
-    <!-- Social Media Section -->
+    <!-- Social -->
     <section class="social">
         <h2>We’re Social</h2>
         <div class="social-buttons">
@@ -95,16 +103,16 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <form id="contact-form">
+        <h2>Contact</h2>
+        <form id="contact-form" class="ai-contact-wrap">
             <input type="text" name="fname" placeholder="First Name" required>
             <input type="text" name="lname" placeholder="Last Name" required>
             <input type="tel" name="phone" placeholder="Phone">
             <input type="email" name="email" placeholder="Email" required>
             <textarea name="message" placeholder="Message" required></textarea>
-            <button type="submit">Submit</button>
+            <input type="submit" value="Submit" class="wpcf7-submit">
         </form>
     </section>
 
@@ -122,7 +130,7 @@
                 <a href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank"><img src="assets/tiktok-icon.png" alt="TikTok"></a>
                 <a href="https://www.facebook.com/YOUR_PAGE" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook"></a>
             </div>
-            <p>© 2025 Justin Roman | Iron Valley Real Estate Prestige. All Rights Reserved.</p>
+            <p>© 2025 Iron Valley Real Estate Prestige. All Rights Reserved. Independently owned and operated by Justin Roman.</p>
         </div>
     </footer>
 </body>
