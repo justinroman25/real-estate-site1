@@ -17,7 +17,21 @@ document.addEventListener("DOMContentLoaded", function() {
         header.classList.toggle("scrolled", window.scrollY > 50);
     });
 
-    // Contact Form Submission (Follow Up Boss)
+    // Lazy Load Headshot
+    const lazyImages = document.querySelectorAll("img.lazyload");
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove("lazyload");
+                observer.unobserve(img);
+            }
+        });
+    });
+    lazyImages.forEach(img => observer.observe(img));
+
+    // Contact Form Submission
     const contactForm = document.getElementById("contact-form");
     contactForm.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -39,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch("https://api.followupboss.com/v1/events", {
             method: "POST",
             headers: {
-                "Authorization": "Basic YOUR_FUB_API_KEY", // Replace with your API key
+                "Authorization": "Basic YOUR_FUB_API_KEY",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
@@ -65,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Placeholder for Testimonials Slider (Static for now)
+    // Testimonials Slider
     const testimonials = document.querySelector(".testimonials-slider");
     let index = 0;
     setInterval(() => {
