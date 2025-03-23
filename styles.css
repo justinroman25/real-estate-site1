@@ -1,3 +1,18 @@
+/* Load Fonts Locally */
+@font-face {
+    font-family: 'Akzidenz-Grotesk BQ';
+    src: url('assets/fonts/AkzidenzGroteskBQ-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Northwell';
+    src: url('assets/fonts/Northwell-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Reset */
 * {
     margin: 0;
@@ -11,6 +26,32 @@ body {
     background-color: #f5f5f5;
     color: #141516;
     line-height: 1.6;
+}
+
+/* Social Media Sidebar */
+.social-sidebar {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.social-sidebar a {
+    display: block;
+}
+
+.social-sidebar img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-sidebar img:hover {
+    transform: scale(1.1);
 }
 
 /* Header */
@@ -189,6 +230,77 @@ body {
     color: #141516;
 }
 
+/* Let’s Get Started */
+.lets-get-started {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+.lets-get-started h2 {
+    font-size: 75px; /* 75px Akzidenz-Grotesk BQ */
+    font-family: 'Akzidenz-Grotesk BQ', Arial, sans-serif;
+    color: #A9683F;
+    margin-bottom: 20px;
+}
+
+.lets-get-started p {
+    font-size: 1rem;
+    color: #141516;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lgs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lgs-item {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.lgs-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 21, 22, 0.6); /* #141516 with opacity */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    transition: background 0.3s ease;
+}
+
+.lgs-item:hover .lgs-overlay {
+    background: rgba(20, 21, 22, 0.8);
+}
+
+.lgs-overlay h3 {
+    font-size: 1.5rem;
+    font-family: 'Akzidenz-Grotesk BQ', Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.lgs-overlay p {
+    font-size: 1rem;
+    color: #A9683F;
+}
+
 /* Testimonials */
 .testimonials {
     padding: 60px 20px;
@@ -287,6 +399,13 @@ body {
     font-family: 'Akzidenz-Grotesk BQ', Arial, sans-serif;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.social-btn img {
+    width: 30px;
+    margin-right: 10px;
 }
 
 .social-btn:hover {
@@ -360,11 +479,32 @@ body {
     color: #FFFFFF;
     padding: 40px 20px;
     text-align: center;
+    position: relative;
+}
+
+.footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/images/footer-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
 }
 
 .footer-inner {
+    position: relative;
+    z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.footer-logo img {
+    max-width: 200px;
+    margin-bottom: 20px;
 }
 
 .footer-contact h3 {
@@ -418,10 +558,20 @@ body {
 
     .quick-search h2,
     .why h2,
+    .lets-get-started h2,
     .testimonials h2,
     .videos h2,
     .social h2,
     .contact h2 {
         font-size: 50px; /* Scale down headings */
+    }
+
+    .social-sidebar {
+        right: 10px;
+    }
+
+    .social-sidebar img {
+        width: 30px;
+        height: 30px;
     }
 }
