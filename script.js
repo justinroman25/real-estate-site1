@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Iron Valley Real Estate Prestige Loaded");
+    console.log("Justin Roman - Iron Valley Real Estate Prestige Loaded");
 
-    // Smooth Scrolling for Navbar Links
+    // Smooth Scrolling
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
         anchor.addEventListener("click", function(e) {
             e.preventDefault();
@@ -11,28 +11,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Navbar Scroll Effect (Sticky Enhancement)
-    const navbar = document.querySelector(".navbar");
+    // Sticky Header Effect
+    const header = document.querySelector(".header");
     window.addEventListener("scroll", function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
-        }
+        header.classList.toggle("scrolled", window.scrollY > 50);
     });
 
     // Contact Form Submission to Follow Up Boss
     const contactForm = document.getElementById("contact-form");
     contactForm.addEventListener("submit", function(e) {
         e.preventDefault();
-
-        // Gather form data
         const name = contactForm.querySelector("input[name='name']").value.trim();
         const email = contactForm.querySelector("input[name='email']").value.trim();
         const phone = contactForm.querySelector("input[name='phone']").value.trim();
         const message = contactForm.querySelector("textarea[name='message']").value.trim();
 
-        // Basic validation
         if (!name || !email || !message) {
             alert("Please fill out all required fields.");
             return;
@@ -42,15 +35,14 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        // Send to Follow Up Boss (Replace YOUR_FUB_API_KEY with your actual key)
         fetch("https://api.followupboss.com/v1/events", {
             method: "POST",
             headers: {
-                "Authorization": "Basic YOUR_FUB_API_KEY", // Base64 encode your API key
+                "Authorization": "Basic YOUR_FUB_API_KEY", // Replace with your key
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                source: "Iron Valley Website",
+                source: "Justin Roman Website",
                 type: "Website Inquiry",
                 person: {
                     firstName: name,
@@ -60,54 +52,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 description: message
             })
         })
-        .then(response => {
-            if (!response.ok) throw new Error("Failed to send to Follow Up Boss");
-            return response.json();
-        })
+        .then(response => response.ok ? response.json() : Promise.reject("Network error"))
         .then(data => {
-            alert(`Thank you, ${name}! We've received your inquiry and will respond soon.`);
+            alert(`Thank you, ${name}! Justin will get back to you soon.`);
             contactForm.reset();
         })
         .catch(error => {
             console.error("Error:", error);
-            alert("There was an issue submitting your form. Please try again later.");
+            alert("There was an issue submitting your form. Please try again.");
         });
     });
 
-    // Lazy Load Listings Section (Showcase IDX Placeholder)
+    // Lazy Load Listings Placeholder
     const listingsSection = document.getElementById("listings");
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                loadListingsPlaceholder();
+                document.getElementById("idx-listings").innerHTML = `
+                    <div class="listing-card"><h3>Luxury Villa</h3><p>$1,200,000 - 4 Beds, 3 Baths</p></div>
+                    <div class="listing-card"><h3>Modern Condo</h3><p>$650,000 - 2 Beds, 2 Baths</p></div>
+                `;
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
     observer.observe(listingsSection);
-
-    // Placeholder function for listings (replace with Showcase IDX in WordPress)
-    function loadListingsPlaceholder() {
-        const listingsContainer = document.getElementById("idx-listings");
-        const placeholderContent = `
-            <div class="listing-card">
-                <h3>Luxury Estate</h3>
-                <p>$1,500,000 - 5 Beds, 4 Baths</p>
-            </div>
-            <div class="listing-card">
-                <h3>Coastal Condo</h3>
-                <p>$850,000 - 3 Beds, 2 Baths</p>
-            </div>
-        `;
-        listingsContainer.innerHTML = placeholderContent;
-    }
-
-    // YouTube Video Play/Pause Toggle (Optional)
-    const youtubeIframe = document.querySelector(".youtube-container iframe");
-    if (youtubeIframe) {
-        document.querySelector(".youtube-link").addEventListener("click", function(e) {
-            // Optional: Add play/pause logic if needed via YouTube API
-            console.log("Navigating to YouTube channel");
-        });
-    }
 });
