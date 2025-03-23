@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justin Roman | Iron Valley Real Estate Prestige</title>
-    <meta name="description" content="Justin Roman offers premier real estate services at Iron Valley Real Estate Prestige, specializing in luxury homes and personalized client support.">
+    <meta name="description" content="Justin Roman at Iron Valley Real Estate Prestige offers expert real estate services for buyers and sellers in Virginia.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header with Sticky Navbar -->
+    <!-- Header -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">
@@ -19,7 +19,7 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#listings">Listings</a></li>
+                    <li><a href="#listings">Properties</a></li>
                     <li><a href="#about">About Justin</a></li>
                     <li><a href="#videos">Videos</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -28,60 +28,88 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Slider Placeholder) -->
     <section id="home" class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="assets/hero-bg.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-content">
-            <h1>Discover Your Dream Home</h1>
-            <p>Justin Roman | Iron Valley Real Estate Prestige</p>
-            <button onclick="window.location.href='#listings'">Search Listings</button>
+        <div class="hero-slider">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="assets/hero-bg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-content">
+                <h1>Welcome Home with Justin Roman</h1>
+                <p>Iron Valley Real Estate Prestige</p>
+                <a href="#listings" class="hero-btn">Search Properties</a>
+            </div>
         </div>
     </section>
 
-    <!-- Listings Section (Showcase IDX Placeholder) -->
-    <section id="listings" class="section">
-        <h2>Featured Listings</h2>
-        <p>Explore premium properties with Showcase IDX.</p>
-        <div id="idx-listings" class="listings-grid">
-            <p>Loading listings...</p> <!-- Replace with [showcaseidx] in WordPress -->
+    <!-- Quick Search (Placeholder for Showcase IDX) -->
+    <section id="listings" class="quick-search">
+        <h2>Find Your Perfect Property</h2>
+        <div id="idx-listings" class="listings-container">
+            <p>Loading Showcase IDX listings...</p> <!-- Replace with [showcaseidx] in WordPress -->
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section about">
+    <section id="about" class="about">
         <h2>About Justin Roman</h2>
-        <div class="about-content">
-            <img src="assets/justin-roman-headshot.jpg" alt="Justin Roman Headshot" class="headshot">
-            <p>Justin Roman is a dedicated real estate professional at Iron Valley Real Estate Prestige, bringing expertise in luxury homes and a commitment to client satisfaction. With a passion for helping people find their perfect property, Justin leverages cutting-edge technology and personalized service to make every transaction seamless.</p>
+        <div class="about-inner">
+            <img src="assets/justin-roman-headshot.jpg" alt="Justin Roman" class="headshot">
+            <p>Hi, I’m Justin Roman, your dedicated real estate expert at Iron Valley Real Estate Prestige. With a passion for helping clients find their dream homes, I bring personalized service, market expertise, and cutting-edge technology to every transaction. Whether you’re buying or selling, I’m here to guide you every step of the way.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Clients Say</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial">
+                <p>"Justin made buying my first home a breeze. His expertise and dedication were unmatched!"</p>
+                <h3>- Sarah K.</h3>
+            </div>
+            <div class="testimonial">
+                <p>"Selling my property with Justin was seamless. He got it done fast and at a great price."</p>
+                <h3>- Michael T.</h3>
+            </div>
         </div>
     </section>
 
     <!-- YouTube Section -->
-    <section id="videos" class="section">
-        <h2>Watch Our Videos</h2>
+    <section id="videos" class="videos">
+        <h2>My Latest Videos</h2>
         <div class="youtube-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
         </div>
         <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" class="youtube-link">Subscribe on YouTube</a>
     </section>
 
+    <!-- Social Media Section -->
+    <section class="social">
+        <h2>We’re Social</h2>
+        <div class="social-buttons">
+            <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" class="social-btn">YouTube</a>
+            <a href="https://www.instagram.com/YOUR_PROFILE" target="_blank" class="social-btn">Instagram</a>
+            <a href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank" class="social-btn">TikTok</a>
+            <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" class="social-btn">Facebook</a>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2>Contact Justin</h2>
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
         <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone (Optional)">
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <input type="text" name="fname" placeholder="First Name" required>
+            <input type="text" name="lname" placeholder="Last Name" required>
+            <input type="tel" name="phone" placeholder="Phone">
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Submit</button>
         </form>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="footer-inner">
             <div class="footer-contact">
                 <h3>Contact</h3>
@@ -89,11 +117,12 @@
                 <p><a href="tel:+1-757-555-1234">757-555-1234</a></p>
             </div>
             <div class="footer-social">
-                <a href="https://www.facebook.com/YOUR_PAGE" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook"></a>
+                <a href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank"><img src="assets/youtube-icon.png" alt="YouTube"></a>
                 <a href="https://www.instagram.com/YOUR_PROFILE" target="_blank"><img src="assets/instagram-icon.png" alt="Instagram"></a>
-                <a href="https://twitter.com/YOUR_HANDLE" target="_blank"><img src="assets/twitter-icon.png" alt="Twitter"></a>
+                <a href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank"><img src="assets/tiktok-icon.png" alt="TikTok"></a>
+                <a href="https://www.facebook.com/YOUR_PAGE" target="_blank"><img src="assets/facebook-icon.png" alt="Facebook"></a>
             </div>
-            <p>&copy; 2025 Justin Roman | Iron Valley Real Estate Prestige. All Rights Reserved.</p>
+            <p>© 2025 Justin Roman | Iron Valley Real Estate Prestige. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
